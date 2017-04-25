@@ -3,10 +3,10 @@
 # ---------------------------------------------------------------
 
 # Put your favicon.ico into `hexo-site/source/` directory.
-favicon: /favicon.ico
+favicon: images/favicon.ico
 
 # Set default keywords (Use a comma to separate)
-keywords: "Hexo, NexT"
+keywords: "Reverse&pwn"
 
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
@@ -14,17 +14,14 @@ keywords: "Hexo, NexT"
 rss:
 
 # Specify the date when the site was setup
-#since: 2015
+since: 2017
 
 # icon between year and author @Footer
 authoricon: heart
 
 # Footer `powered-by` and `theme-info` copyright
-copyright: true
+copyright: false
 
-# ---------------------------------------------------------------
-# SEO Settings
-# ---------------------------------------------------------------
 
 # Canonical, set a canonical link tag in your hexo, you could use it for your SEO of blog.
 # See: https://support.google.com/webmasters/answer/139066
@@ -34,10 +31,6 @@ canonical: true
 # Change headers hierarchy on site-subtitle (will be main site description) and on all post/pages titles for better SEO-optimization.
 seo: false
 
-# If true, will add site-subtitle to index page, added in main hexo config.
-# subtitle: Subtitle
-index_with_subtitle: false
-
 # ---------------------------------------------------------------
 # Menu Settings
 # ---------------------------------------------------------------
@@ -45,10 +38,10 @@ index_with_subtitle: false
 # When running the site in a subdirectory (e.g. domain.tld/blog), remove the leading slash (/archives -> archives)
 menu:
   home: /
-  #categories: /categories
-  #about: /about
   archives: /archives
+  categories: /categories
   tags: /tags
+  about: /about
   #sitemap: /sitemap.xml
   #commonweal: /404.html
 
@@ -78,8 +71,8 @@ menu_icons:
 # ---------------------------------------------------------------
 
 # Schemes
-scheme: Muse
-#scheme: Mist
+#scheme: Muse
+scheme: Mist
 #scheme: Pisces
 
 
@@ -101,13 +94,14 @@ font:
   global:
     # external: true will load this font family from host.
     external: true
-    family: Lato
+    #family: Lato
+    family: Monda
 
   # Font settings for Headlines (h1, h2, h3, h4, h5, h6)
   # Fallback to `global` font settings.
   headings:
     external: true
-    family:
+    family: 
 
   # Font settings for posts
   # Fallback to `global` font settings.
@@ -120,13 +114,13 @@ font:
   # The `size` option use `px` as unit
   logo:
     external: true
-    family:
-    size:
+    family: 
+    size: 24
 
   # Font settings for <code> and code blocks.
   codes:
     external: true
-    family:
+    family: PT Mono
     size:
 
 
@@ -140,8 +134,9 @@ font:
 # Social Links
 # Key is the link label showing to end users.
 # Value is the target link (E.g. GitHub: https://github.com/iissnan)
-#social:
+social:
   #LinkLabel: Link
+  GitHub: https://github.com/0x4C43
 
 
 # Social Links Icons
@@ -161,7 +156,7 @@ social_icons:
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.jpg
 # in site  directory(source/uploads): /uploads/avatar.jpg
-#avatar:
+avatar: /uploads/avatar.jpg
 
 
 # Table Of Contents in the Sidebar
@@ -189,8 +184,8 @@ sidebar:
   #  - always  expand for all pages automatically
   #  - hide    expand only when click on the sidebar toggle icon.
   #  - remove  Totally remove sidebar including sidebar toggle.
-  display: post
-  #display: always
+  #display: post
+  display: always
   #display: hide
   #display: remove
 
@@ -206,11 +201,11 @@ sidebar:
 
 
 # Blog rolls
-#links_title: Links
+links_title: Links
 #links_layout: block
 #links_layout: inline
-#links:
-  #Title: http://example.com/
+links:
+  CSDN : http://blog.csdn.net/swjtu100?viewmode=list
 
 
 # ---------------------------------------------------------------
@@ -229,7 +224,7 @@ excerpt_description: true
 # Automatically Excerpt. Not recommend.
 # Please use <!-- more --> in the post to control excerpt accurately.
 auto_excerpt:
-  enable: false
+  enable: true
   length: 150
 
 # Post meta display settings
@@ -278,7 +273,7 @@ custom_logo:
 # Available value:
 #    normal | night | night eighties | night blue | night bright
 # https://github.com/chriskempson/tomorrow-theme
-highlight_theme: normal
+highlight_theme: night bright
 
 
 # ---------------------------------------------------------------
@@ -307,14 +302,14 @@ han: false
 # Disqus
 disqus:
   enable: false
-  shortname:
-  count: true
+  shortname: 
+  count: false
 
 # Hypercomments
 #hypercomments_id:
 
 # Gentie productKey
-#gentie_productKey:
+gentie_productKey: c190dfc84c3444f78b4a39fbfe45d4ee
 
 # changyan
 changyan:
@@ -412,19 +407,19 @@ leancloud_visitors:
 # Get more information on http://ibruce.info/2015/04/04/busuanzi/
 busuanzi_count:
   # count values only if the other configs are false
-  enable: false
+  enable: true
   # custom uv span for the whole site
   site_uv: true
-  site_uv_header: <i class="fa fa-user"></i>
-  site_uv_footer:
+  site_uv_header: 访客数
+  site_uv_footer: 人次
   # custom pv span for the whole site
   site_pv: true
-  site_pv_header: <i class="fa fa-eye"></i>
-  site_pv_footer:
+  site_pv_header: 总访问量
+  site_pv_footer: 次
   # custom pv span for one page only
   page_pv: true
-  page_pv_header: <i class="fa fa-file-o"></i>
-  page_pv_footer:
+  page_pv_header: 阅读次数
+  page_pv_footer: 
 
 
 # Tencent analytics ID
@@ -467,12 +462,7 @@ algolia_search:
 
 # Local search
 local_search:
-  enable: false
-  # if auto, trigger search by changing input
-  # if manual, trigger search by pressing enter key or search button
-  trigger: auto
-  # show top n results per article, show all results by setting to -1
-  top_n_per_article: 1
+  enable: true
 
 # External URL with BASE64 encrypt & decrypt
 # Usage: {% exturl text url "title" %}
@@ -486,7 +476,7 @@ exturl: false
 #! ---------------------------------------------------------------
 
 # Motion
-use_motion: true
+use_motion: false
 
 # Fancybox
 fancybox: true
@@ -589,4 +579,4 @@ js: js
 images: images
 
 # Theme version
-version: 5.1.1
+version: 5.1.0

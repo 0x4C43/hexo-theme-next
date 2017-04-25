@@ -66,8 +66,7 @@ NexT.utils = NexT.$u = {
       var scrollTop = $(window).scrollTop();
       var docHeight = $('#content').height();
       var winHeight = $(window).height();
-      var contentMath = (docHeight > winHeight) ? (docHeight - winHeight) : ($(document).height() - winHeight);
-      var scrollPercent = (scrollTop) / (contentMath);
+      var scrollPercent = (scrollTop) / (docHeight - winHeight);
       var scrollPercentRounded = Math.round(scrollPercent*100);
       var scrollPercentMaxed = (scrollPercentRounded > 100) ? 100 : scrollPercentRounded;
       $('#scrollpercent>span').html(scrollPercentMaxed);
